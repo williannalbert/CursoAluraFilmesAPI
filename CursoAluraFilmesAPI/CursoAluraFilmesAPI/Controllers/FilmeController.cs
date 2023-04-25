@@ -12,9 +12,10 @@ public class FilmeController : ControllerBase
     [HttpPost]
     public void AdicionaFilme([FromBody]Filme filme)
     {
+
         filmes.Add(filme);
         Console.WriteLine(filme.Titulo);
-        Console.WriteLine(filme.Duracao);
         Console.WriteLine(filme.Genero);
+        Console.WriteLine(filme.Duracao);
     }
 }
