@@ -1,18 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CursoAluraFilmesAPI.Models;
+namespace CursoAluraFilmesAPI.Data.DTOs;
 
-public class Filme
+public class CreateFilmeDTO
 {
-    [Key]
-    [Required]
-    public int Id { get; set; }
 
     [Required(ErrorMessage = "O título do filme é obrigatório")]
     public string Titulo { get; set; }
 
     [Required(ErrorMessage = "O genero do filme é obrigatório")]
-    [MaxLength(50, ErrorMessage = "O tamanho máximo do gênero é 50 caracteres")]
+    [StringLength(50, ErrorMessage = "O tamanho máximo do gênero é 50 caracteres")]
     public string Genero { get; set; }
 
     [Required]
