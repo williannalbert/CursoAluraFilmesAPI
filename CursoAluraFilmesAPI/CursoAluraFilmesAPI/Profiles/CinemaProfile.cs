@@ -9,7 +9,9 @@ namespace CursoAluraFilmesAPI.Profiles
         public CinemaProfile()
         {
             CreateMap<CreateCinemaDTO, Cinema>();
-            CreateMap<Cinema, ReadCinemaDto>();
+            CreateMap<Cinema, ReadCinemaDto>().
+                ForMember(cinemaDTO => cinemaDTO.Endereco,
+                    opt => opt.MapFrom(cinema => cinema.Endereco));
             CreateMap<UpdateCinemaDTO, Cinema>();
         }
     }

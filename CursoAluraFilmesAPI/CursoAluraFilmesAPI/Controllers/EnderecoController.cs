@@ -5,7 +5,9 @@ using CursoAluraFilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CursoAluraFilmesAPI.Controllers
-{ 
+{
+    [ApiController]
+    [Route("[controller]")]
     public class EnderecoController : ControllerBase
     {
         private FilmeContext _context;
@@ -27,10 +29,11 @@ namespace CursoAluraFilmesAPI.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<ReadEnderecoDTO> RetornaEnderecos()
+        public IEnumerable<ReadEnderecoDTO> RecuperaEnderecos()
         {
             return _mapper.Map<List<ReadEnderecoDTO>>(_context.Enderecos);
         }
+
 
         [HttpGet("{id}")]
         public IActionResult RetornaEnderecosPorId(int id)
