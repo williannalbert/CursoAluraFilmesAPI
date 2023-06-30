@@ -16,5 +16,6 @@ namespace CursoAluraFilmesAPI.Models
         //para recuperar endereço é necessário instalar Microsoft.EntityFrameworkCore.Proxies - versão 6.0.10 da solução
         //instanciar UseLazyLoadingProxies no program.cs
         public virtual Endereco Endereco { get; set; }
+        public virtual ICollection<Sessao> Sessoes { get; set; }
     }
 }

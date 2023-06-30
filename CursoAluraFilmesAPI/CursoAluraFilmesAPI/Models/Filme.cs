@@ -18,8 +18,10 @@ public class Filme
     [Required]
     [Range(70, 600, ErrorMessage = "Duração deve ter entre 70 e 600 min")]
     public int Duracao { get; set; }
+    //Definição da relação 1-n, para indiciar que um filme pode ter uma ou mais sessoes
+    public virtual ICollection<Sessao> Sessoes { get; set; }    
 
-    /*comandos para criação de migration
+    /*comandos para criação de migration//no console de gerenciador de pacotes
      * add-migration CriandoTabelaDeFilme
      * Update-Database
      */

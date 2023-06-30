@@ -7,5 +7,6 @@ namespace CursoAluraFilmesAPI.Data.DTOs
         public int Id { get; set; }
         public string Nome { get; set; }
         public ReadEnderecoDTO Endereco { get; set; }
+        public ICollection<ReadSessaoDTO> Sessoes { get; set; }
     }
 }
