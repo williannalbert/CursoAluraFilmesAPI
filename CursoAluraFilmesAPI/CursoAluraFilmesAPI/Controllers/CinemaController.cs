@@ -3,6 +3,7 @@ using CursoAluraFilmesAPI.Data;
 using CursoAluraFilmesAPI.Data.DTOs;
 using CursoAluraFilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CursoAluraFilmesAPI.Controllers;
 
@@ -28,9 +29,16 @@ public class CinemaController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<ReadCinemaDto> RetornaCinemas()
+    public IEnumerable<ReadCinemaDto> RetornaCinemas([FromQuery] int? enderecoId = null)
     {
-        return _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.ToList());
+        if(enderecoId == null)
+            return _mapper.Map<List<ReadCinemaDto>>(_context.Cinemas.ToList());
+            
+        
+        return _mapper.Map<List<ReadCinemaDto>>(
+            _context.Cinemas.FromSqlRaw($"SELECT ID, NOME, ENDERECOID FROM CINEMAS WHERE CINEMAS.ENDERECOID = {enderecoId}").ToList());
+
+
     }
 
     [HttpGet("{id}")]
