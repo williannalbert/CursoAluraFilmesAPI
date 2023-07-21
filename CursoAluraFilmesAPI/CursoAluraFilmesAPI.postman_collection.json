@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "e4d38b01-b973-4a5a-a739-9b897ad990d6",
+		"name": "CursoAluraFilmesAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17722376"
+	},
+	"item": [
+		{
+			"name": "https://localhost:7244/filme",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Titulo\": \"Harry Potter 3\",\r\n    \"Duracao\":125,\r\n    \"Genero\":\"Fantasia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7244/filme",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"filme"
+					],
+					"query": [
+						{
+							"key": "Titulo",
+							"value": "teste f",
+							"disabled": true
+						},
+						{
+							"key": "Genero",
+							"value": "genero",
+							"disabled": true
+						},
+						{
+							"key": "Duracao",
+							"value": "1255",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7244/cinema",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nome\": \"Cinema Teste 1\",\r\n    \"EnderecoID\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7244/cinema",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"cinema"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "take",
+							"value": "50",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7244/Filme",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"op\":\"replace\",\r\n        \"path\":\"/titulo\",\r\n        \"value\":\"Harry Potter 2\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7244/Filme",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"Filme"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7244/cinema",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/cinema",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"cinema"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7244/endereco/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/endereco/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"endereco",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7244/endereco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Logradouro\":\"Rua teste 3432\",\r\n    \"Numero\":123\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7244/endereco",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"endereco"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7244/sessao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filmeId\": 1,\r\n    \"cinemaId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7244/sessao",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"sessao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7244/sessao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/sessao",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"sessao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7244/cinema?enderecoId=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/cinema?enderecoId=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"cinema"
+					],
+					"query": [
+						{
+							"key": "enderecoId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:7244/filme?nomeCinema=Cinema%20Teste%201",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/filme?nomeCinema=Cinema%20Teste%201",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"filme"
+					],
+					"query": [
+						{
+							"key": "nomeCinema",
+							"value": "Cinema%20Teste%201"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
